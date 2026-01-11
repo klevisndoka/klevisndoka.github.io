@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Klevis Ndoka - Software Engineer & Developer">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
     <title>Klevis Ndoka</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,7 +13,7 @@
         <!-- Profile Header -->
         <header class="profile-header">
             <div class="avatar">
-                <img src="https://api.dicebear.com/7.x/initials/svg?seed=KN&backgroundColor=000000&textColor=ffffff" alt="Klevis Ndoka">
+                <img src="https://www.gravatar.com/avatar/klevisn@gmail.com?s=200&d=retro" alt="Klevis Ndoka">
             </div>
             <h1 class="name">Klevis Ndoka</h1>
             <p class="tagline">Software Engineer</p>
@@ -30,11 +31,11 @@
                 <div class="link-text">Connect</div>
             </a>
 
-            <!-- Email - Replace with your actual email -->
-            <a href="mailto:your-email@example.com" class="link">
+            <!-- Email - Protected with CAPTCHA -->
+            <div class="link email-link" id="emailLink">
                 <div class="link-icon">Email</div>
                 <div class="link-text">Get in touch</div>
-            </a>
+            </div>
 
             <!-- Twitter/X - Uncomment and replace if you have one -->
             <!-- <a href="https://twitter.com/yourusername" class="link" target="_blank" rel="noopener noreferrer">
@@ -55,7 +56,97 @@
         </footer>
     </div>
 
+    <!-- CAPTCHA Modal -->
+    <div id="captchaModal" class="captcha-modal">
+        <div class="captcha-content">
+            <h3>Verify You're Human</h3>
+            <p>Click the matching number:</p>
+            <div class="captcha-challenge">
+                <span class="captcha-number" id="captchaNumber"></span>
+            </div>
+            <div class="captcha-options" id="captchaOptions"></div>
+            <button class="captcha-close" id="captchaClose">✕</button>
+        </div>
+    </div>
+
     <script>
+        // Email protection with CAPTCHA
+        const EMAIL = 'klevisn@gmail.com';
+        let captchaAnswer = 0;
+
+        document.getElementById('emailLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCaptcha();
+        });
+
+        function showCaptcha() {
+            const modal = document.getElementById('captchaModal');
+            const numberDisplay = document.getElementById('captchaNumber');
+            const optionsContainer = document.getElementById('captchaOptions');
+
+            // Generate random number between 1-9
+            captchaAnswer = Math.floor(Math.random() * 9) + 1;
+            numberDisplay.textContent = captchaAnswer;
+
+            // Generate options (one correct, three wrong)
+            let options = [captchaAnswer];
+            while (options.length < 4) {
+                let wrong = Math.floor(Math.random() * 9) + 1;
+                if (!options.includes(wrong)) {
+                    options.push(wrong);
+                }
+            }
+            options = options.sort(() => Math.random() - 0.5);
+
+            // Create option buttons
+            optionsContainer.innerHTML = '';
+            options.forEach(num => {
+                const btn = document.createElement('button');
+                btn.className = 'captcha-option';
+                btn.textContent = num;
+                btn.addEventListener('click', () => verifyCaptcha(num));
+                optionsContainer.appendChild(btn);
+            });
+
+            modal.classList.add('show');
+        }
+
+        function verifyCaptcha(selected) {
+            if (selected === captchaAnswer) {
+                // Correct - reveal email
+                window.location.href = 'mailto:' + EMAIL;
+                closeCaptcha();
+            } else {
+                // Wrong - shake animation
+                const modal = document.querySelector('.captcha-content');
+                modal.classList.add('shake');
+                setTimeout(() => {
+                    modal.classList.remove('shake');
+                    showCaptcha(); // New challenge
+                }, 500);
+            }
+        }
+
+        function closeCaptcha() {
+            document.getElementById('captchaModal').classList.remove('show');
+        }
+
+        document.getElementById('captchaClose').addEventListener('click', closeCaptcha);
+
+        // Close on backdrop click
+        document.getElementById('captchaModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCaptcha();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeCaptcha();
+            }
+        });
+
         // Add subtle parallax effect on mouse move
         document.addEventListener('mousemove', (e) => {
             const container = document.querySelector('.container');

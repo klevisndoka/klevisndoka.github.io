@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Klevis Ndoka - Software Engineer & Developer">
+    <title>Klevis Ndoka</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Header -->
+        <header class="profile-header">
+            <div class="avatar">
+                <img src="https://api.dicebear.com/7.x/initials/svg?seed=KN&backgroundColor=000000&textColor=ffffff" alt="Klevis Ndoka">
+            </div>
+            <h1 class="name">Klevis Ndoka</h1>
+            <p class="tagline">Software Engineer</p>
+        </header>
+
+        <!-- Links Section -->
+        <main class="links">
+            <a href="https://github.com/klevisndoka" class="link" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon">GitHub</div>
+                <div class="link-text">@klevisndoka</div>
+            </a>
+
+            <a href="https://linkedin.com/in/kndoka" class="link" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon">LinkedIn</div>
+                <div class="link-text">Connect</div>
+            </a>
+
+            <!-- Email - Replace with your actual email -->
+            <a href="mailto:your-email@example.com" class="link">
+                <div class="link-icon">Email</div>
+                <div class="link-text">Get in touch</div>
+            </a>
+
+            <!-- Twitter/X - Uncomment and replace if you have one -->
+            <!-- <a href="https://twitter.com/yourusername" class="link" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon">𝕏</div>
+                <div class="link-text">@yourusername</div>
+            </a> -->
+
+            <!-- Website/Blog - Uncomment and replace if you have one -->
+            <!-- <a href="https://yourwebsite.com" class="link" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon">🌐</div>
+                <div class="link-text">My Website</div>
+            </a> -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>24n7.me</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add subtle parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const container = document.querySelector('.container');
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            container.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset on mouse leave
+        document.addEventListener('mouseleave', () => {
+            const container = document.querySelector('.container');
+            container.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+        });
+    </script>
+</body>
+</html>

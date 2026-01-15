@@ -41,12 +41,32 @@ function closeCaptcha() {
   document.getElementById('captchaModal').classList.remove('active');
 }
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeCaptcha();
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', function() {
+  const emailBtn = document.getElementById('emailBtn');
+  const closeModal = document.getElementById('closeModal');
+  const captchaModal = document.getElementById('captchaModal');
+
+  if (emailBtn) {
+    emailBtn.addEventListener('click', showCaptcha);
+  }
+
+  if (closeModal) {
+    closeModal.addEventListener('click', closeCaptcha);
+  }
+
+  if (captchaModal) {
+    captchaModal.addEventListener('click', (e) => {
+      if (e.target.id === 'captchaModal') closeCaptcha();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeCaptcha();
+  });
 });
 
-document.getElementById('emailBtn')?.addEventListener('click', showCaptcha);
-document.getElementById('closeModal')?.addEventListener('click', closeCaptcha);
-document.getElementById('captchaModal')?.addEventListener('click', (e) => {
-  if (e.target.id === 'captchaModal') closeCaptcha();
-});
+// Make functions available globally for onclick attributes
+window.showCaptcha = showCaptcha;
+window.verifyCaptcha = verifyCaptcha;
+window.closeCaptcha = closeCaptcha;

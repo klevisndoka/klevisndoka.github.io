@@ -85,6 +85,9 @@ layout: default
     {%- elsif pair.url -%}
     {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}:
     {{ quote_value }}<a class="value" href="{{ pair.url | relative_url }}" target="{{ tab }}">{{ pair.value }}</a>{{ quote_value }}
+    {%- elsif pair.button -%}
+    {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}:
+    {{ quote_value }}<button class="value email-btn" id="emailBtn">{{ pair.value }}</button>{{ quote_value }}
     {%- else -%}
     {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}:
     {{ quote_value }}<span class="value">{{ pair.value }}</span>{{ quote_value }}

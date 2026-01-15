@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{ 'assets/css/open-color.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ 'assets/css/styles.css' | relative_url }}" />
   <script src="{{ 'assets/js/typed.umd.js' | relative_url }}"></script>
+  <script src="{{ 'assets/js/email-protector.js' | relative_url }}"></script>
 </head>
 
 <body>
@@ -25,6 +26,18 @@
 {{ content }}
 
   </main>
+
+  <!-- CAPTCHA Modal -->
+  <div id="captchaModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">✕</button>
+      <h3 class="modal-title">Verify</h3>
+      <p class="modal-instruction">Tap the matching number</p>
+      <div class="modal-number" id="captchaNumber">5</div>
+      <div class="modal-options" id="captchaOptions"></div>
+    </div>
+  </div>
+
   <script>
     var typed = new Typed("#typed", {
       stringsElement: "#strings",

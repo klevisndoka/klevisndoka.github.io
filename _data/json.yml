@@ -17,5 +17,6 @@
   value: kndoka
   url: https://linkedin.com/in/kndoka
 - key: Email
-  value: klevisn@gmail.com
-  url: mailto:klevisn@gmail.com
+  value: Click to reveal
+  button: true
+

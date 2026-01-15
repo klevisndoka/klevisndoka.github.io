@@ -4,3 +4,4 @@ _site/
 .jekyll-metadata
 vendor/
 tmpclaude-*.cwd
+Gemfile.lock

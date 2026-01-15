@@ -3,8 +3,6 @@ description: Senior Software Engineer Team Lead building scalable solutions
 baseurl: ""
 url: https://klevisndoka.github.io
 
-theme: hacked-jekyll
-
 exclude:
   - LICENSE
   - README.md

@@ -1,0 +1,32 @@
+title: Klevis Ndoka
+description: Senior Software Engineer Team Lead building scalable solutions
+baseurl: ""
+url: https://klevisndoka.github.io
+
+theme: hacked-jekyll
+
+exclude:
+  - LICENSE
+  - README.md
+  - Gemfile
+  - vendor/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+sass:
+  sourcemap: never
+
+# Customize colors (optional - using default green theme)
+color_bg: gray-9
+color_punct: green-9
+color_key: green-4
+color_value: green-4
+color_hover: green-5
+
+# Display options
+quotes: true
+commas: true
+lowercase: false
+newtab: true

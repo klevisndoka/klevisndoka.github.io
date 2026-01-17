@@ -20,27 +20,29 @@ body {
   font-weight: 400;
   background-color: $color_bg;
   color: $color_punct;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 main {
-  position: absolute;
-  width: 98%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 @media (min-width: 576px) {
   main {
     font-size: 18px;
-    width: 90%;
+    padding: 1.5rem;
   }
 }
 
 @media (min-width: 768px) {
   main {
     font-size: 20px;
-    width: 80%;
+    padding: 2rem;
   }
 }
 
@@ -60,7 +62,9 @@ a:active {
 }
 
 #json {
-  white-space: nowrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 #json:before {

@@ -69,28 +69,25 @@ a:active {
 
 @media (max-width: 768px) {
   #json {
-    white-space: normal;
+    white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
     overflow-x: hidden;
   }
 
-  .my {
+  #json > .my {
+    display: block;
     margin-top: 0;
     margin-bottom: 0;
-    display: inline;
   }
 
   .ms {
-    display: inline;
     margin-left: 0.75rem;
   }
 
   p.ms {
-    display: block;
+    display: inline;
     margin-left: 0.75rem;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
   }
 }
 

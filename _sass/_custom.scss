@@ -130,3 +130,24 @@
   25% { transform: translateX(-8px); }
   75% { transform: translateX(8px); }
 }
+
+// Instagram link styling
+.instagram-link {
+  position: relative;
+  padding-left: 1.5rem;
+  font-weight: 500;
+
+  &::before {
+    content: "📷";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85em;
+    opacity: 0.9;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

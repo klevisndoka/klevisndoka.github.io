@@ -19,4 +19,21 @@
 - key: Email
   value: Click to reveal
   button: true
-
+- key: SocialProfiles
+  value:
+    - key: Instagram
+      value: "@ClevisNdoka"
+      url: https://instagram.com/ClevisNdoka
+    - key: Facebook
+      value: "ClevisNdoka"
+      url: https://facebook.com/ClevisNdoka
+- key: Children
+  value:
+    - key: "📷 Child's Posts"
+      value: "View on Instagram"
+      url: https://instagram.com/ClevisNdoka
+      instagram: true
+    - key: "👨‍👩‍👧‍👦 Family Moments"
+      value: "View on Instagram"
+      url: https://instagram.com/ClevisNdoka
+      instagram: true

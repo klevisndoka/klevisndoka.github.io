@@ -46,7 +46,7 @@ layout: default
     {% if value.url -%}
     <p class="ms">
       {{ quote_key }}<span class="key">{{ value.key }}</span>{{ quote_key }}:
-      {{ quote_value }}<a class="value" href="{{ value.url | relative_url }}" target="{{ tab }}">{{ value.value }}</a>{{ quote_value }}
+      {{ quote_value }}<a class="value{% if value.instagram %} instagram-link{% endif %}" href="{{ value.url | relative_url }}" target="{{ tab }}">{{ value.value }}</a>{{ quote_value }}
       {%- unless forloop.last -%}
       {{ comma }}
       {%- endunless %}

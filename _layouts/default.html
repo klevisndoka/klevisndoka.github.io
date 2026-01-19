@@ -44,13 +44,17 @@
   <link rel="icon" type="image/x-icon" href="{{ 'assets/favicon.ico' | relative_url }}" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/apple-touch-icon.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/favicon-32x32.png' | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/favicon-16x16.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/favicon-16x16.png' | relative_url }}" />
+
+  <!-- Hreflang Tags -->
+  <link rel="alternate" hreflang="en" href="{{ site.url }}/" />
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
   <link rel="manifest" href="{{ 'assets/site.webmanifest' | relative_url }}">
   <link rel="stylesheet" href="{{ 'assets/css/normalize.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ 'assets/css/open-color.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ 'assets/css/styles.css' | relative_url }}" />
-  <script src="{{ 'assets/js/typed.umd.js' | relative_url }}"></script>
-  <script src="{{ 'assets/js/email-protector.js' | relative_url }}"></script>
+  <script src="{{ 'assets/js/typed.umd.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/email-protector.js' | relative_url }}" defer></script>
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">

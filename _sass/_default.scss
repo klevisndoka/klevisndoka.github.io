@@ -88,9 +88,10 @@ a:active {
 
 @media (max-width: 768px) {
   #json {
+    white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    overflow-x: auto;
+    overflow-x: hidden;
   }
 
   #json > .my {
@@ -104,8 +105,10 @@ a:active {
   }
 
   p.ms {
-    display: inline;
+    display: block;
     margin-left: 0.75rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
   }
 }
 

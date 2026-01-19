@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://klevisndoka.github.io/sitemap.xml
+
+# Disallow specific paths if needed
+# Disallow: /assets/
+# Disallow: /.git/
+
+# Crawl-delay (optional, respectful crawling)
+# Crawl-delay: 1

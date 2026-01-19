@@ -25,8 +25,10 @@ layout: default
 
 {% if site.newtab == true -%}
 {% assign tab = '_blank' -%}
+{% assign rel = 'noopener noreferrer' -%}
 {% else -%}
 {% assign tab = '_self' -%}
+{% assign rel = '' -%}
 {% endif -%}
 
 <div id="json">
@@ -46,7 +48,7 @@ layout: default
     {% if value.url -%}
     <p class="ms">
       {{ quote_key }}<span class="key">{{ value.key }}</span>{{ quote_key }}:
-      {{ quote_value }}<a class="value{% if value.instagram %} instagram-link{% endif %}" href="{{ value.url | relative_url }}" target="{{ tab }}">{{ value.value }}</a>{{ quote_value }}
+      {{ quote_value }}<a class="value{% if value.instagram %} instagram-link{% endif %}" href="{{ value.url | relative_url }}" target="{{ tab }}"{% if rel != '' %} rel="{{ rel }}"{% endif %}>{{ value.value }}</a>{{ quote_value }}
       {%- unless forloop.last -%}
       {{ comma }}
       {%- endunless %}
@@ -67,7 +69,7 @@ layout: default
     {% for value in pair.value -%}
     {% if value.url -%}
     <p class="ms">
-      {{ quote_value }}<a class="value" href="{{ value.url | relative_url }}" target="{{ tab }}">{{ value.value }}</a>{{ quote_value }}
+      {{ quote_value }}<a class="value" href="{{ value.url | relative_url }}" target="{{ tab }}"{% if rel != '' %} rel="{{ rel }}"{% endif %}>{{ value.value }}</a>{{ quote_value }}
       {%- unless forloop.last -%}
       {{ comma }}
       {%- endunless %}
@@ -84,7 +86,7 @@ layout: default
     ]
     {%- elsif pair.url -%}
     {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}:
-    {{ quote_value }}<a class="value" href="{{ pair.url | relative_url }}" target="{{ tab }}">{{ pair.value }}</a>{{ quote_value }}
+    {{ quote_value }}<a class="value" href="{{ pair.url | relative_url }}" target="{{ tab }}"{% if rel != '' %} rel="{{ rel }}"{% endif %}>{{ pair.value }}</a>{{ quote_value }}
     {%- elsif pair.button -%}
     {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}:
     {{ quote_value }}<button class="value email-btn" id="emailBtn">{{ pair.value }}</button>{{ quote_value }}

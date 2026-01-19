@@ -1,8 +1,8 @@
 - key: Name
   value: Klevis Ndoka
 - key: Title
-  value: Senior Software Engineer Team Lead
-- key: Company
+  value: Product Owner / Senior Software Engineer
+- key: Current Company
   value: dev.al
 - key: Location
   value: Tirana, Albania
@@ -10,30 +10,20 @@
   value: 10+ years
 - key: Education
   value: M.Sc. Computer Engineering
-- key: GitHub
-  value: klevisndoka
-  url: https://github.com/klevisndoka
-- key: LinkedIn
-  value: kndoka
-  url: https://linkedin.com/in/kndoka
 - key: Email
   value: Click to reveal
   button: true
-- key: SocialProfiles
+- key: Profiles
   value:
+    - key: GitHub
+      value: klevisndoka
+      url: https://github.com/klevisndoka    
+    - key: LinkedIn
+      value: kndoka
+      url: https://linkedin.com/in/kndoka
     - key: Instagram
-      value: "@ClevisNdoka"
-      url: https://instagram.com/ClevisNdoka
+      value: "@KlevisNdoka"
+      url: https://instagram.com/KlevisNdoka
     - key: Facebook
-      value: "ClevisNdoka"
-      url: https://facebook.com/ClevisNdoka
-- key: Children
-  value:
-    - key: "📷 Child's Posts"
-      value: "View on Instagram"
-      url: https://instagram.com/ClevisNdoka
-      instagram: true
-    - key: "👨‍👩‍👧‍👦 Family Moments"
-      value: "View on Instagram"
-      url: https://instagram.com/ClevisNdoka
-      instagram: true
+      value: "KlevisNdoka"
+      url: https://facebook.com/KlevisNdoka

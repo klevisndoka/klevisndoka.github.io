@@ -7,6 +7,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ site.title }}</title>
 
+  <!-- Basic SEO Meta Tags -->
+  <meta name="description" content="{{ site.description }}" />
+  <meta name="keywords" content="Klevis Ndoka, Software Engineer, Team Lead, Senior Software Engineer, Developer, Albania, Tirana" />
+  <meta name="author" content="Klevis Ndoka" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:title" content="{{ site.title }}" />
+  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:image" content="{{ site.url }}/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+  <meta name="twitter:title" content="{{ site.title }}" />
+  <meta name="twitter:description" content="{{ site.description }}" />
+  <meta name="twitter:image" content="{{ site.url }}/assets/og-image.jpg" />
+  <meta name="twitter:creator" content="@ClevisNdoka" />
+  <meta name="twitter:site" content="@ClevisNdoka" />
+
+  <!-- LinkedIn Specific -->
+  <meta property="linkedin:owner" content="kndoka" />
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#009688" />
+  <meta name="msapplication-TileColor" content="#009688" />
+
 {% seo title=false %}
   <link rel="icon" type="image/x-icon" href="{{ 'assets/favicon.ico' | relative_url }}" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/apple-touch-icon.png' | relative_url }}">
@@ -18,6 +52,33 @@
   <link rel="stylesheet" href="{{ 'assets/css/styles.css' | relative_url }}" />
   <script src="{{ 'assets/js/typed.umd.js' | relative_url }}"></script>
   <script src="{{ 'assets/js/email-protector.js' | relative_url }}"></script>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Klevis Ndoka",
+    "jobTitle": "Senior Software Engineer Team Lead",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "dev.al"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tirana",
+      "addressCountry": "Albania"
+    },
+    "url": "{{ site.url }}",
+    "sameAs": [
+      "https://github.com/klevisndoka",
+      "https://linkedin.com/in/kndoka",
+      "https://instagram.com/ClevisNdoka",
+      "https://facebook.com/ClevisNdoka"
+    ],
+    "knowsAbout": ["Software Engineering", "Team Leadership", "Scalable Solutions", "Computer Engineering"]
+  }
+  </script>
 </head>
 
 <body>

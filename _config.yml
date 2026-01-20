@@ -3,8 +3,8 @@ description: Senior Software Engineer Team Lead & Product Owner at dev.al in Tir
 baseurl: ""
 url: https://klevisndoka.github.io
 
-# Theme
-theme: jekyll-theme-basically-basic
+# Remote Theme
+remote_theme: mmistakes/jekyll-theme-basically-basic@v1.0.1
 
 # Skin (optional: basically-basic, solar, solar-dark, solar-light-solar, solar-light, etc.)
 skin: basically-basic

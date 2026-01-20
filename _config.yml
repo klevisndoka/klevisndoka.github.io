@@ -4,7 +4,7 @@ baseurl: ""
 url: https://klevisndoka.github.io
 
 # Remote Theme
-remote_theme: mmistakes/jekyll-theme-basically-basic@v1.4.5
+remote_theme: mmistakes/jekyll-theme-basically-basic@1.4.5
 
 # Skin (optional: basically-basic, solar, solar-dark, solar-light-solar, solar-light, etc.)
 skin: basically-basic

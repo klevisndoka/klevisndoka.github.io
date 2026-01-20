@@ -1,0 +1,31 @@
+- key: Name
+  value: Klevis Ndoka
+- key: Title
+  value: Product Owner / Senior Software Engineer
+- key: Current Company
+  value: dev.al
+- key: Location
+  value: Tirana, Albania
+- key: Experience
+  value: 10+ years
+- key: Education
+  value: M.Sc. Computer Engineering
+- key: About
+  value: "Experienced software engineering professional with over 10 years of expertise in building scalable, robust software solutions. Currently serving as Product Owner and Senior Software Engineer Team Lead at dev.al, a leading technology company in Tirana, Albania. Specialized in full-stack development, cloud architecture, microservices, and agile methodologies. Passionate about mentoring teams, driving technical excellence, and delivering high-impact products. Strong background in computer engineering with a Master of Science degree. Focused on continuous learning, emerging technologies, and best practices in software development."
+- key: Email
+  value: Click to reveal
+  button: true
+- key: Profiles
+  value:
+    - key: GitHub
+      value: klevisndoka
+      url: https://github.com/klevisndoka
+    - key: LinkedIn
+      value: kndoka
+      url: https://linkedin.com/in/kndoka
+    - key: Instagram
+      value: "@KlevisNdoka"
+      url: https://instagram.com/KlevisNdoka
+    - key: Facebook
+      value: "KlevisNdoka"
+      url: https://facebook.com/KlevisNdoka

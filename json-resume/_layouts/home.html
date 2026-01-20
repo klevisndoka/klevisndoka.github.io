@@ -1,0 +1,154 @@
+---
+layout: default
+---
+
+{% case site.quotes -%}
+{% when 'keys' -%}
+{% assign quote_key = '"' -%}
+{% assign quote_value = '' -%}
+{% when 'values' -%}
+{% assign quote_key = '' -%}
+{% assign quote_value = '"' -%}
+{% when false -%}
+{% assign quote_key = '' -%}
+{% assign quote_value = '' -%}
+{% else -%}
+{% assign quote_key = '"' -%}
+{% assign quote_value = '"' -%}
+{% endcase -%}
+
+{% if site.commas == false -%}
+{% assign comma = '' -%}
+{% else -%}
+{% assign comma = ',' -%}
+{% endif -%}
+
+{% if site.newtab == true -%}
+{% assign tab = '_blank' -%}
+{% assign rel = 'noopener noreferrer' -%}
+{% else -%}
+{% assign tab = '_self' -%}
+{% assign rel = '' -%}
+{% endif -%}
+
+<div id="json">
+  {% for pair in site.data.json %}
+  <div class="my ms">
+    {% if pair.typed -%}
+    <div id="strings">
+      {% for value in pair.value -%}
+      <span>{{ value }}</span>
+      {%- endfor %}
+    </div>
+    {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}:
+    {{ quote_value }}<span class="value"><span id="typed"></span></span>{{ quote_value }}
+    {%- elsif pair.value.first.key -%}
+    {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}: [
+    {% for value in pair.value -%}
+    {% if value.url -%}
+    <p class="ms">
+      {{ quote_key }}<span class="key">{{ value.key }}</span>{{ quote_key }}:
+      {{ quote_value }}<a class="value{% if value.instagram %} instagram-link{% endif %}" href="{{ value.url | relative_url }}" target="{{ tab }}"{% if rel != '' %} rel="{{ rel }}"{% endif %}>{{ value.value }}</a>{{ quote_value }}
+      {%- unless forloop.last -%}
+      {{ comma }}
+      {%- endunless %}
+    </p>
+    {% else -%}
+    <p class="ms">
+      {{ quote_key }}<span class="key">{{ value.key }}</span>{{ quote_key }}:
+      {{ quote_value }}<span class="value">{{ value.value }}</span>{{ quote_value }}
+      {%- unless forloop.last -%}
+      {{ comma }}
+      {%- endunless %}
+    </p>
+    {% endif -%}
+    {%- endfor -%}
+    ]
+    {%- elsif pair.value.first -%}
+    {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}: [
+    {% for value in pair.value -%}
+    {% if value.url -%}
+    <p class="ms">
+      {{ quote_value }}<a class="value" href="{{ value.url | relative_url }}" target="{{ tab }}"{% if rel != '' %} rel="{{ rel }}"{% endif %}>{{ value.value }}</a>{{ quote_value }}
+      {%- unless forloop.last -%}
+      {{ comma }}
+      {%- endunless %}
+    </p>
+    {% else -%}
+    <p class="ms">
+      {{ quote_value }}<span class="value">{{ value }}</span>{{ quote_value }}
+      {%- unless forloop.last -%}
+      {{ comma }}
+      {%- endunless %}
+    </p>
+    {% endif -%}
+    {%- endfor -%}
+    ]
+    {%- elsif pair.url -%}
+    {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}:
+    {{ quote_value }}<a class="value" href="{{ pair.url | relative_url }}" target="{{ tab }}"{% if rel != '' %} rel="{{ rel }}"{% endif %}>{{ pair.value }}</a>{{ quote_value }}
+    {%- elsif pair.button -%}
+    {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}:
+    {{ quote_value }}<button class="value email-btn" id="emailBtn">{{ pair.value }}</button>{{ quote_value }}
+    {%- else -%}
+    {{ quote_key }}<span class="key">{{ pair.key }}</span>{{ quote_key }}:
+    {{ quote_value }}<span class="value">{{ pair.value }}</span>{{ quote_value }}
+    {%- endif -%}
+    {%- unless forloop.last -%}
+    {{ comma }}
+    {%- endunless %}
+  </div>
+  {% endfor %}
+</div>
+<footer class="site-footer" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--color-punct);">
+  <nav aria-label="Site Navigation">
+    <h3 style="font-size: 1em; margin-bottom: 0.5rem; color: var(--color-value);">Quick Links</h3>
+    <ul style="list-style: none; padding: 0; margin: 0; margin-bottom: 1rem;">
+      <li style="margin-bottom: 0.5rem;">
+        <a href="/" style="color: var(--color-value); text-decoration: none;">Home</a>
+      </li>
+      <li style="margin-bottom: 0.5rem;">
+        <a href="https://github.com/klevisndoka" rel="noopener noreferrer" style="color: var(--color-value); text-decoration: none; font-style: italic;">GitHub Profile</a>
+      </li>
+      <li style="margin-bottom: 0.5rem;">
+        <a href="https://linkedin.com/in/kndoka" rel="noopener noreferrer" style="color: var(--color-value); text-decoration: none; font-style: italic;">LinkedIn Profile</a>
+      </li>
+      <li style="margin-bottom: 0.5rem;">
+        <a href="https://instagram.com/KlevisNdoka" rel="noopener noreferrer" style="color: var(--color-value); text-decoration: none; font-style: italic;">Instagram</a>
+      </li>
+      <li style="margin-bottom: 0.5rem;">
+        <a href="https://facebook.com/KlevisNdoka" rel="noopener noreferrer" style="color: var(--color-value); text-decoration: none; font-style: italic;">Facebook</a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav aria-label="Social Sharing" style="margin-top: 1rem;">
+    <h3 style="font-size: 1em; margin-bottom: 0.5rem; color: var(--color-value);">Share Profile</h3>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+      <li style="display: inline-block; margin-right: 1rem;">
+        <a href="https://twitter.com/intent/tweet?text=Check%20out%20Klevis%20Ndoka%27s%20profile%20-%20Senior%20Software%20Engineer%20%26%20Product%20Owner&url=https://klevisndoka.github.io&via=ClevisNdoka"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="color: var(--color-value); text-decoration: none; font-style: italic;">Share on X</a>
+      </li>
+      <li style="display: inline-block; margin-right: 1rem;">
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://klevisndoka.github.io"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="color: var(--color-value); text-decoration: none; font-style: italic;">Share on LinkedIn</a>
+      </li>
+      <li style="display: inline-block;">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://klevisndoka.github.io"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="color: var(--color-value); text-decoration: none; font-style: italic;">Share on Facebook</a>
+      </li>
+    </ul>
+  </nav>
+
+  <p style="margin-top: 1rem; font-size: 0.9em; opacity: 0.8;">
+    © 2026 Klevis Ndoka. <a href="mailto:info@klevisndoka.com" style="color: var(--color-value);">Contact</a> |
+    <a href="/sitemap.xml" style="color: var(--color-value);">Sitemap</a>
+  </p>
+</footer>
+

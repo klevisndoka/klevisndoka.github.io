@@ -3,24 +3,48 @@ description: Senior Software Engineer Team Lead & Product Owner at dev.al in Tir
 baseurl: ""
 url: https://klevisndoka.github.io
 
+# Theme
+theme: jekyll-theme-basically-basic
+
+# Skin (optional: basically-basic, solar, solar-dark, solar-light-solar, solar-light, etc.)
+skin: basically-basic
+
 exclude:
   - LICENSE
   - README.md
   - Gemfile
+  - Gemfile.lock
   - vendor/
 
+# Markdown processor
+markdown: kramdown
+highlighter: rouge
+
+# Pagination
+paginate: 5
+paginate_path: "/page/:num/"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
+
+# Sass
 sass:
   sourcemap: never
+  style: compressed
 
-# Customize colors (optional - using default green theme)
-color_bg: gray-9
-color_punct: green-9
-color_key: green-4
-color_value: green-4
-color_hover: green-5
+# SEO
+twitter:
+  username: ClevisNdoka
 
-# Display options
-quotes: true
-commas: true
-lowercase: false
-newtab: true
+# Social
+author:
+  name: KlevisNdoka
+  twitter: ClevisNdoka
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXXX-X

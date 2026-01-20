@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # GitHub Pages
-gem "github-pages", group: :jekyll_plugins, "~> 232"
+gem "github-pages", "~> 232", group: :jekyll_plugins
 
 # Plugins
 group :jekyll_plugins do
